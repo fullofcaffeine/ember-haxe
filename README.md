@@ -1,52 +1,20 @@
-# ember-quickstart
+WARNING: As of this writing, this is a total mess and only a playground. Eventually it will evolve into a skeleton for Ember/Haxe awesomeness, and this warning will be removed. Right now
+I don't even recommend you look at it.
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+The goal is to generate Ember2/EmberCLI-friendly JavaScript with Haxe, and make it as painless as possible to use Haxe to create Ember-style classes.
 
-## Prerequisites
+This can't be done without a custom JavaScript generator, because 1) By default Haxe compiles everything to a single js file, this is not compatible with the way Ember-CLI works and
+2) Ember-CLI expects ES6-style import/exports, and HaxeJS does not support it out-of-the-box.
 
-You will need the following things properly installed on your computer.
+Workflow
+---
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Bower](https://bower.io/)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+The goal is to NOT change the workflow that much from what EmberCLI expects, we don't want to hack our way (too much) into Ember, since we also want to be as close to the community standards
+as possible, while taking advantage of the Haxe compiler and libraries. We also want to have the flexibility of using plain ES6 if/when necessary and take full advantage of the EmberCLI assets
+pipeline.
 
-## Installation
+I see two approaches here: 1) Haxe classes and the output js sit side-by-side 2) We have two trees, a apphx that mirrors the final app output. Still thinking what would be the best approach.
 
-* `git clone <repository-url>` this repository
-* `cd ember-quickstart`
-* `npm install`
-* `bower install`
+See also the README for the custom js generator, with more specific TODO items, [here](haxe-js-gen/README.md)
 
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+If you happen to stumble upon this mess now and have any ideas, feel free to contact me!
