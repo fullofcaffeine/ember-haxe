@@ -1,0 +1,7 @@
+-cp haxe-js-gen
+-cp app
+-lib tink_macro
+-lib thx.core
+-js relative_path.js
+--macro "include('app.routes')"
+--macro genjs.Generator.use()
